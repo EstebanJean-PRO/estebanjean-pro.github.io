@@ -9,8 +9,8 @@ export default function ProjectCard({ project, itsTechs }) {
     const [currentImg, setCurrentImg] = useState(0);
     const [isFullscreen, setIsFullscreen] = useState(false);
 
-    const handleImageChange = (direction) => {
-        if (direction === 'next') {
+    const handleImageChange = (isNext) => {
+        if (isNext) {
             setCurrentImg((prev) => (prev + 1) % project.screenshots.length);
         } else {
             setCurrentImg((prev) => (prev - 1 + project.screenshots.length) % project.screenshots.length);
@@ -31,7 +31,7 @@ export default function ProjectCard({ project, itsTechs }) {
                     style={{ width: (project.screenshots.length > 1) ? '75%' : '100%' }}
                 >
                     {project.screenshots.length > 1 ? (
-                        <button onClick={() => handleImageChange('prev')} className="nav-button prev">Prev</button>
+                        <button onClick={() => handleImageChange(false)}>Prev</button>
                     ) : (null)}
 
                     <img 
@@ -42,7 +42,7 @@ export default function ProjectCard({ project, itsTechs }) {
                     />
 
                     {project.screenshots.length > 1 ? (
-                        <button onClick={() => handleImageChange('next')} className="nav-button next">Next</button>
+                        <button onClick={() => handleImageChange(true)}>Next</button>
                     ) : (null)}
                 </div>
             ): (null)}

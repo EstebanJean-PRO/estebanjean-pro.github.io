@@ -51,7 +51,7 @@
             ""
         ],
         "name": "This portfolio",
-        "techs": ["html", "css", "javascript", "react", "vite"],
+        "techs": ["html", "css", "typescript", "react", "vite"],
         "description": "Right here!",
         "links": [
             {"name": "Source Code", "url": "https://github.com/MrLepoischiche/ejean.github.io", "icon": "github"}
