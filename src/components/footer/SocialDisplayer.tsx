@@ -1,33 +1,48 @@
-import "/public/common.css"
+import "/src/common.css"
 import "./SocialDisplayer.css"
 
 import { useState } from "react"
 
-export default function SocialDisplayer({ id, title, displayedText, isIconSwap, defaultIcon, swapperIcon, clickHandler, timers }) {
+import { CacheStorage, useTheme } from "../../models";
+import { Icon, getIcons8Url } from "../Icon";
+
+interface SocialDisplayerProps {
+    id: string;
+    title: string;
+    displayedText: string;
+    defaultIcon: string;
+    swapperIcon: string;
+    clickHandler: () => void;
+}
+
+export default function SocialDisplayer({ id, title, displayedText, defaultIcon, swapperIcon, clickHandler }: SocialDisplayerProps) {
     const lengthState = useState(0);
+    const { theme } = useTheme();
 
     function enterTextEvent() {
-        if (typeof displayedText === 'string' && displayedText.length === 0) {
+        if (displayedText.length === 0) {
             return
         }
 
         const SOCIAL_DISPLAY = document.getElementById(id);
-        const DISPLAY_P = SOCIAL_DISPLAY.querySelector("p");
+        const DISPLAY_P = SOCIAL_DISPLAY!.querySelector("p");
 
-        if (timers[id + "-erasing"] || DISPLAY_P.style.display === 'none') {
-            clearInterval(timers[id + "-erasing"]);
+        if (CacheStorage[id + "-erasing"] || DISPLAY_P!.style.display === 'none') {
+            clearInterval(CacheStorage[id + "-erasing"]);
+            delete CacheStorage[id + "-erasing"];
         }
         
-        if (isIconSwap && (typeof swapperIcon === 'string' && swapperIcon.length > 0)) {
-            SOCIAL_DISPLAY.querySelector('img').src = swapperIcon;
+        if (swapperIcon.length > 0) {
+            SOCIAL_DISPLAY!.querySelector('img')!.src = getIcons8Url("ios-filled", "100", theme, swapperIcon);
         }
-        DISPLAY_P.style.display = 'block';
+        DISPLAY_P!.style.display = 'block';
     
-        timers[id + "-entering"] = setInterval(() => {
-            DISPLAY_P.innerHTML = displayedText.slice(0, lengthState[0]);
+        CacheStorage[id + "-entering"] = setInterval(() => {
+            DISPLAY_P!.innerHTML = displayedText.slice(0, lengthState[0]);
             
-            if (DISPLAY_P.innerHTML.length === displayedText.length) {
-                clearInterval(timers[id + "-entering"]);
+            if (DISPLAY_P!.innerHTML.length === displayedText.length) {
+                clearInterval(CacheStorage[id + "-entering"]);
+                delete CacheStorage[id + "-entering"];
             }
     
             lengthState[0]++;
@@ -40,23 +55,25 @@ export default function SocialDisplayer({ id, title, displayedText, isIconSwap, 
         }
 
         const SOCIAL_DISPLAY = document.getElementById(id);
-        const DISPLAY_P = SOCIAL_DISPLAY.querySelector("p");
+        const DISPLAY_P = SOCIAL_DISPLAY!.querySelector("p");
 
-        if (timers[id + "-entering"] || DISPLAY_P.style.display === 'block') {
-            clearInterval(timers[id + "-entering"]);
+        if (CacheStorage[id + "-entering"] || DISPLAY_P!.style.display === 'block') {
+            clearInterval(CacheStorage[id + "-entering"]);
+            delete CacheStorage[id + "-entering"];
         }
     
-        timers[id + "-erasing"] = setInterval(() => {
+        CacheStorage[id + "-erasing"] = setInterval(() => {
             lengthState[0]--;
     
-            DISPLAY_P.innerHTML = DISPLAY_P.innerHTML.slice(0, lengthState[0]);
+            DISPLAY_P!.innerHTML = DISPLAY_P!.innerHTML.slice(0, lengthState[0]);
     
-            if (DISPLAY_P.innerHTML.length <= 0) {
-                DISPLAY_P.style.display = 'none';
-                if (isIconSwap && (typeof swapperIcon === 'string' && swapperIcon.length > 0)) {
-                    SOCIAL_DISPLAY.querySelector('img').src = defaultIcon;
+            if (DISPLAY_P!.innerHTML.length <= 0) {
+                DISPLAY_P!.style.display = 'none';
+                if (swapperIcon.length > 0) {
+                    SOCIAL_DISPLAY!.querySelector('img')!.src = getIcons8Url("ios-filled", "100", theme, defaultIcon);
                 }
-                clearInterval(timers[id + "-erasing"]);
+                clearInterval(CacheStorage[id + "-erasing"]);
+                delete CacheStorage[id + "-erasing"];
             }
         }, 20);
     }
@@ -73,7 +90,12 @@ export default function SocialDisplayer({ id, title, displayedText, isIconSwap, 
 
             onClick={clickHandler}
         >
-            <img width="100" height="100" src={defaultIcon} />
+            <Icon
+                width="100"
+                height="100"
+                icons8type={"ios-filled"}
+                link={defaultIcon}
+            />
             <p className="offside-regular" style={{display: "none"}}></p>
         </div>
     );

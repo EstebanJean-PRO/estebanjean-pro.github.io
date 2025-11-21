@@ -22,10 +22,10 @@ header > div {
 }
 
 #link-to-index > h1 {
-    color: white;
+    color: var(--heading-text);
     text-align: center;
     height: auto;
-    text-shadow: 6px 4px 2px black;
+    text-shadow: 6px 4px 2px var(--shadow-color-2);
 }
 
 #link-navigator {
@@ -38,22 +38,30 @@ header > div {
 
 #link-navigator > * {
     color: var(--main-text);
-    text-shadow: 4px 2px 1px black;
+    text-shadow: 4px 2px 1px var(--shadow-color-1);
+    transition: color 0.2s ease;
 }
 
 #color-changer {
     width: fit-content;
     align-items: center;
     justify-content: center;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     border-left: var(--main-border);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#color-changer:hover {
+    background-color: var(--element-background-hover);
 }
 
 #color-changer > img {
-    width: 40px;
-    height: 40px;
-    text-shadow: 4px 2px 1px black;
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(2px 2px 4px var(--shadow-color-1));
+    transition: filter 0.3s ease;
 }
 
 @media (max-width: 750px) {

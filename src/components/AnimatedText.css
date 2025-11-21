@@ -1,0 +1,14 @@
+.animated-text {
+    display: inline-block;
+}
+
+.animated-letter {
+    white-space: pre;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .animated-letter {
+        animation: none !important;
+    }
+}

@@ -3,11 +3,38 @@
     align-items: center;
     justify-content: start;
     padding-top: 120px;
+    position: relative;
+
+    /* Animated gradient background */
+    background: linear-gradient(
+        -45deg,
+        var(--body-background),
+        var(--primary-blue-light),
+        var(--element-background),
+        var(--shadow-color-1)
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+/* Smooth fade-out at the bottom */
+#greeter::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, var(--body-background));
+    pointer-events: none;
+    z-index: 1;
 }
 
 #greeter > div {
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 2;
 }
 
 #greet-text {
@@ -16,7 +43,7 @@
 }
 
 #greet-text > h1 {
-    font-size: 44pt;
+    font-size: 64pt;
     text-align: center;
     letter-spacing: 8px;
     word-spacing: 25vw;
@@ -53,5 +80,23 @@
 @media (max-width: 975px) {
     #greet-text > h1 {
         font-size: 6vw;
+    }
+}
+
+/* Gradient animation keyframes */
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    #greeter {
+        animation: none;
+        background-size: 100% 100%;
     }
 }

@@ -2,10 +2,72 @@
 
 /* --------------------- VARIABLES --------------------- */
 
-:root {
+/* Default theme (dark) */
+:root, [data-theme="dark"] {
+    /* Primary Colors - Brighter for better visibility on dark */
+    --primary-blue: #3B8BFF;
+    --primary-blue-hover: #5BA0FF;
+    --primary-blue-light: rgba(59, 139, 255, 0.1);
+
+    /* Backgrounds */
+    --body-background: #000000;
     --element-background: #202020;
+    --element-background-hover: #252a35; /* Blue tint instead of gray */
+
+    /* Text Colors */
     --main-text: #dedede;
-    --main-border: solid #777777 2px;
+    --secondary-text: #ababab;
+    --heading-text: #ffffff;
+
+    /* Borders */
+    --main-border-color: #777777;
+    --main-border: solid var(--main-border-color) 2px;
+    --hover-border-color: var(--primary-blue);
+
+    /* Shadows - More prominent blue */
+    --shadow-color-1: rgba(59, 139, 255, 0.25);
+    --shadow-color-2: rgba(59, 139, 255, 0.35);
+    --card-shadow: 10px 5px 20px rgba(59, 139, 255, 0.2);
+
+    /* Accents */
+    --accent-color: var(--primary-blue);
+    --accent-hover: var(--primary-blue-hover);
+    --link-color: var(--primary-blue);
+    --link-hover-color: var(--primary-blue-hover);
+}
+
+/* Light theme */
+[data-theme="light"] {
+    /* Primary Colors */
+    --primary-blue: #1E74FD;
+    --primary-blue-hover: #0D5FE8;
+    --primary-blue-light: rgba(30, 116, 253, 0.08);
+
+    /* Backgrounds - Soft blue, easy on eyes */
+    --body-background: #f5f8fc;
+    --element-background: #ffffff;
+    --element-background-hover: #eaf2fb;
+
+    /* Text Colors - High contrast for readability */
+    --main-text: #24292e;
+    --secondary-text: #586069;
+    --heading-text: #1b1f23;
+
+    /* Borders - Blue-tinted */
+    --main-border-color: #c5d9ed;
+    --main-border: solid var(--main-border-color) 2px;
+    --hover-border-color: var(--primary-blue);
+
+    /* Shadows - Prominent blue */
+    --shadow-color-1: rgba(30, 116, 253, 0.18);
+    --shadow-color-2: rgba(30, 116, 253, 0.28);
+    --card-shadow: 5px 5px 15px rgba(30, 116, 253, 0.15);
+
+    /* Accents */
+    --accent-color: var(--primary-blue);
+    --accent-hover: var(--primary-blue-hover);
+    --link-color: var(--primary-blue);
+    --link-hover-color: var(--primary-blue-hover);
 }
 
 
@@ -16,6 +78,13 @@
     src:
         local("Audiowide"),
         url("/fonts/Audiowide-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Electrolize";
+    src:
+        local("Electrolize"),
+        url("/fonts/Electrolize-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -37,6 +106,11 @@
     src:
         local("Rampart One"),
         url("/fonts/RampartOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Tektur";
+    src: url("/fonts/Tektur-VariableFont.ttf") format("truetype");
 }
 
 @font-face {
@@ -79,24 +153,26 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #ccc;
+    background-color: var(--main-border-color);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: white;
+    background-color: var(--primary-blue);
 }
 
 
 /* --------------------- ELEMENT-SPECIFIC --------------------- */
 
 body {
-    background-color: black;
+    background-color: var(--body-background);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 div, section, header, footer {
     display: flex;
+    transition: background-color 0.3s ease, border-color 0.3s ease, background-image 0.3s ease;
 }
 
 a, p, h1, h2, h3, img {
@@ -110,8 +186,17 @@ a, p {
 }
 
 a:hover {
-    color: #ababab;
+    color: var(--accent-hover);
     text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 
@@ -122,6 +207,20 @@ a:hover {
     font-weight: 400;
     font-style: normal;
     font-size: 20pt;
+}
+
+.electrolize {
+    font-family: "Electrolize", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20pt;
+}
+
+.tektur {
+    font-family: "Tektur", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18pt;
 }
 
 .offside-regular {
@@ -186,11 +285,11 @@ a:hover {
     position: absolute;
     left: calc(50vw - 25px);
     top: calc(50vh - 25px);
-    
+
     background-color: transparent;
-    border: solid gray 1px;
+    border: solid var(--primary-blue) 1px;
     border-radius: 100%;
     z-index: 1;
     opacity: 0;
-    /*transition: opacity 500ms;*/
+    transition: border-color 0.3s ease;
 }

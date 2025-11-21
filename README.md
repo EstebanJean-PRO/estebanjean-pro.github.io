@@ -9,5 +9,5 @@ If GitHub shows a 404 page, there is either a problem or an upcoming update. In 
 ## Legal Mentions
 
 Icons used in this project belong to the following sites:
-- `www.icons8.com`
-- `www.devicon.dev`
+- [Icons8](https://www.icons8.com)
+- [Devicon](https://devicon.dev)

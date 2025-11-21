@@ -1,4 +1,5 @@
 #content {
+    background-color: var(--body-background);
     align-items: center;
     justify-content: start;
 }
@@ -11,44 +12,28 @@
 }
 
 #content > div > * {
-    padding-top: 30vh;
-    padding-bottom: 30vh;
+    padding-top: 25vh;
+    padding-bottom: 25vh;
 }
 
 
-#spe-cards {
-    width: 70%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    justify-content: center;
-    justify-items: center;
-    align-items: stretch;
-    grid-auto-columns: 50%;
-    gap: 50px;
-}
-
-.spe-card {
-    width: 100%;
+/* Elevator Pitch Section */
+.elevator-pitch {
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    padding: 30px;
     background-color: var(--element-background);
-    border: 2px solid #252525;
-    border-radius: 5%;
-    box-shadow: 10px 5px 5px #151515;
-    padding: 5%;
-
-    justify-content: center;
-    align-items: center;
-
-    transition: border-color 500ms;
-}
-.spe-card:hover {
-    border-color: #707070;
+    border: 2px solid var(--primary-blue);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px var(--shadow-color-1);
 }
 
-.spe-card > div {
-    width: 90%;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.elevator-pitch p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--main-text);
+    margin: 0;
 }
 
 #the-rest {
@@ -66,21 +51,14 @@
     flex-wrap: wrap;
 }
 
-@media (max-width: 615px) {
-    .spe-card {
-        width: 80vw;
+@media (max-width: 768px) {
+    .elevator-pitch {
+        width: 90%;
+        padding: 20px;
     }
-}
 
-@media (max-width: 800px) {
-    #spe-cards {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Maybe... */
-@media (min-width: 1600px) {
-    #spe-cards {
-        grid-template-columns: 1fr 1fr 1fr;
+    .elevator-pitch p {
+        font-size: 1.1rem;
+        line-height: 1.6;
     }
 }

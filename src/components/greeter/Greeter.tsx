@@ -1,35 +1,42 @@
-import '/public/common.css'
+import '/src/common.css'
 import './Greeter.css'
+import { CacheStorage } from '../../models';
+import { Icon } from '../Icon';
+import AnimatedText from '../AnimatedText';
 
-function HiddenText({timers}) {
+function HiddenText() {
     return (
         <div id="hidden-text" className="flex-col"
             onMouseEnter={(event) => {
-                clearInterval(timers.hidingDivDisappearInterval);
-                timers.hidingDivAppearInterval = setInterval(
+                clearInterval(CacheStorage.hidingDivDisappearInterval);
+                delete CacheStorage.hidingDivDisappearInterval;
+
+                CacheStorage.hidingDivAppearInterval = setInterval(
                     () => {
-                        let opacity = Number(event.target.style.opacity);
+                        let opacity = Number((event.target as HTMLElement).style.opacity);
                         if (opacity < 1) {
                             opacity += 0.1;
-                            event.target.style.opacity = String(opacity);
+                            (event.target as HTMLElement).style.opacity = String(opacity);
                         } else {
-                            clearInterval(timers.hidingDivAppearInterval);
+                            clearInterval(CacheStorage.hidingDivAppearInterval);
+                            delete CacheStorage.hidingDivAppearInterval;
                         }
                     }, 90
                 );
 
-                for (let i = 0; i < event.target.children.length; i++) {
+                for (let i = 0; i < (event.target as HTMLElement).children.length; i++) {
                     let timeoutName = 'sentence' + String(i+1) + 'AppearTimeout';
-                    timers[timeoutName] = setTimeout(() => {
+                    CacheStorage[timeoutName] = setTimeout(() => {
                         let intervalName = 'sentence' + String(i+1) + 'AppearInterval';
-                        timers[intervalName] = setInterval(
+                        CacheStorage[intervalName] = setInterval(
                             () => {
-                                let opacity = Number(event.target.children[i].style.opacity);
+                                let opacity = Number(((event.target as HTMLElement).children[i] as HTMLElement).style.opacity);
                                 if (opacity < 1) {
                                     opacity += 0.1;
-                                    event.target.children[i].style.opacity = String(opacity);
+                                    ((event.target as HTMLElement).children[i] as HTMLElement).style.opacity = String(opacity);
                                 } else {
-                                    clearInterval(timers[intervalName]);
+                                    clearInterval(CacheStorage[intervalName]);
+                                    delete CacheStorage[intervalName];
                                 }
                             }, 75
                         );
@@ -38,35 +45,41 @@ function HiddenText({timers}) {
             }}
 
             onMouseLeave={(event) => {
-                clearInterval(timers.hidingDivAppearInterval);
-                timers.hidingDivDisappearInterval = setInterval(
+                clearInterval(CacheStorage.hidingDivAppearInterval);
+                delete CacheStorage.hidingDivAppearInterval;
+
+                CacheStorage.hidingDivDisappearInterval = setInterval(
                     () => {
-                        if (event.target.style.opacity > 0) {
-                            event.target.style.opacity -= 0.1;
+                        if (Number((event.target as HTMLElement).style.opacity) > 0) {
+                            (event.target as HTMLElement).style.opacity = String(Number((event.target as HTMLElement).style.opacity) - 0.1);
                         } else {
-                            clearInterval(timers.hidingDivDisappearInterval);
+                            clearInterval(CacheStorage.hidingDivDisappearInterval);
+                            delete CacheStorage.hidingDivDisappearInterval;
                         }
                     }, 50
                 );
 
-                for (let i = 0; i < event.target.children.length; i++) {
+                for (let i = 0; i < (event.target as HTMLElement).children.length; i++) {
                     let timeoutName = 'sentence' + String(i+1) + 'AppearTimeout';
                     let intervalName = 'sentence' + String(i+1) + 'AppearInterval';
             
-                    if (timers[timeoutName]) {
-                        clearTimeout(timers[timeoutName]);
-                        clearInterval(timers[intervalName]);
+                    if (CacheStorage[timeoutName]) {
+                        clearTimeout(CacheStorage[timeoutName]);
+                        clearInterval(CacheStorage[intervalName]);
+                        delete CacheStorage[timeoutName];
+                        delete CacheStorage[intervalName];
                     }
-            
-                    if (event.target.children[i].style.opacity > 0 || timers[intervalName]) {
+
+                    if (Number(((event.target as HTMLElement).children[i] as HTMLElement).style.opacity) > 0 || CacheStorage[intervalName]) {
                         let disapIntervalName = 'sentence' + String(i+1) + 'DisappearInterval';
             
-                        timers[disapIntervalName] = setInterval(
+                        CacheStorage[disapIntervalName] = setInterval(
                             () => {
-                                if (event.target.children[i].style.opacity > 0) {
-                                    event.target.children[i].style.opacity -= 0.1;
+                                if (Number(((event.target as HTMLElement).children[i] as HTMLElement).style.opacity) > 0) {
+                                    ((event.target as HTMLElement).children[i] as HTMLElement).style.opacity = String(Number(((event.target as HTMLElement).children[i] as HTMLElement).style.opacity) - 0.1);
                                 } else {
-                                    clearInterval(timers[disapIntervalName]);
+                                    clearInterval(CacheStorage[disapIntervalName]);
+                                    delete CacheStorage[disapIntervalName];
                                 }
                             }, 50
                         );
@@ -80,17 +93,21 @@ function HiddenText({timers}) {
     );
 }
 
-export default function Greeter({timers}) {
+export default function Greeter() {
     return (
         <section id="greeter" className="flex-col">
             <div id="greet-text" className="flex-col">
-                <h1 className="rampart-one-regular">Esteban JEAN</h1>
-                <HiddenText timers={timers} />
-                <h1 className="rampart-one-regular">Full-Stack Developer</h1>
+                <h1 className="audiowide-regular">
+                    <AnimatedText text="Esteban JEAN" delay={0.75} />
+                </h1>
+                <HiddenText/>
+                <h1 className="audiowide-regular">
+                    <AnimatedText text="Full-Stack Developer" delay={1.5} />
+                </h1>
             </div>
             <div id="scroll-inv" className="flex-col">
                 <p className="offside-regular">Scroll !</p>
-                <img width="26" height="26" src="https://img.icons8.com/metro/26/FFFFFF/long-arrow-down.png"/>
+                <Icon width="26" height="26" icons8type="metro" link="long-arrow-down" name="Scroll!" />
             </div>
         </section>
     );

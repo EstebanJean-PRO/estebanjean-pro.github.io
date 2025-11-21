@@ -2,15 +2,29 @@
     text-decoration: underline;
 }
 
+.project-heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.heading-underline {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+    border-radius: 2px;
+    max-width: 300px;
+}
+
 .project-card {
     display: flex;
     flex-direction: column;
     background-color: var(--element-background);
-    border: 2px solid #252525;
+    border: 2px solid var(--main-border-color);
     border-radius: 3%;
-    box-shadow: 10px 5px 5px #151515;
-    
-    transition: border-color 500ms;
+    box-shadow: var(--card-shadow);
+
+    transition: border-color 500ms, box-shadow 300ms;
 
     align-items: center;
     justify-content: center;
@@ -23,7 +37,28 @@
 }
 
 .project-card:hover {
-    border-color: #707070;
+    border-color: var(--hover-border-color);
+    box-shadow: 0 8px 20px var(--shadow-color-2);
+}
+
+.project-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.info-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    opacity: 0.7;
+}
+
+.info-icon:hover {
+    transform: scale(1.2);
+    opacity: 1;
 }
 
 .project-card button {
@@ -31,11 +66,16 @@
     font-size: 1.2rem;
     font-weight: 600;
     color: #ffffff;
-    background-color: #646cff;
+    background-color: var(--primary-blue);
     border-radius: 0.5rem;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.project-card button:hover {
+    background-color: var(--primary-blue-hover);
 }
 
 .project-card .image-container {
@@ -50,4 +90,5 @@
     max-height: 100%;
     object-fit: contain;
     border-radius: 5%;
+    cursor: pointer;
 }

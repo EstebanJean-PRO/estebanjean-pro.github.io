@@ -1,0 +1,127 @@
+.hard-skills-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--heading-text);
+    margin: 0;
+}
+
+.hard-skills-grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+
+.skill-category-card {
+    background-color: var(--element-background);
+    border: 2px solid var(--main-border-color);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    transition: border-color 300ms, box-shadow 300ms, transform 200ms;
+}
+
+.skill-category-card:hover {
+    border-color: var(--hover-border-color);
+    box-shadow: 0 8px 24px var(--shadow-color-2);
+    transform: translateY(-4px);
+}
+
+.category-title {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin: 0 0 20px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 200ms;
+}
+
+.skill-item:hover {
+    background-color: var(--element-background-hover);
+}
+
+.skill-item img {
+    flex-shrink: 0;
+}
+
+.skill-name {
+    flex: 1;
+    font-family: "Offside", serif;
+    font-size: 1.1rem;
+    color: var(--main-text);
+}
+
+.skill-proficiency {
+    font-family: "Audiowide", serif;
+    font-size: 0.85rem;
+    color: var(--primary-blue);
+    padding: 4px 12px;
+    border-radius: 12px;
+    background-color: var(--primary-blue-light);
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .hard-skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .hard-skills-grid {
+        grid-template-columns: 1fr;
+        width: 95%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .category-title {
+        font-size: 1.3rem;
+    }
+
+    .skill-name {
+        font-size: 1rem;
+    }
+
+    .skill-proficiency {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .hard-skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+        width: 85%;
+    }
+}

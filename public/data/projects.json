@@ -7,7 +7,7 @@
         "techs": ["c"],
         "description": "Multiplayer TCP/IP MasterMind game.",
         "links": [
-            {"name": "Source Code", "url": "https://github.com/MrLepoischiche/Old-Mastermind-Game", "icon": "github"}
+            {"label": "Source Code", "url": "https://github.com/MrLepoischiche/Old-Mastermind-Game", "icon": "github"}
         ]
     },
     {
@@ -18,7 +18,7 @@
         "techs": ["go"],
         "description": "P2P server where clients connect with Linux's \"nc\" command.",
         "links": [
-            {"name": "Source Code", "url": "https://github.com/MrLepoischiche/Net-Cat", "icon": "github"}
+            {"label": "Source Code", "url": "https://github.com/MrLepoischiche/Net-Cat", "icon": "github"}
         ] 
     },
     {
@@ -31,19 +31,8 @@
         "techs": ["html", "css", "javascript", "react", "graphql"],
         "description": "A React app to query my school's GraphQL API.",
         "links": [
-            {"name": "Source Code", "url": "https://github.com/MrLepoischiche/MyGraphQL", "icon": "github"},
-            {"name": "Visit Website", "url": "https://subtle-nougat-143c59.netlify.app/", "icon": "external"}
-        ]
-    },
-    {
-        "screenshots": [
-            ""
-        ],
-        "name": "Cardia",
-        "techs": ["html", "css", "javascript", "go"],
-        "description": "100% online card games website to play all kinds of card games on, completely free of any gambling mechanic.",
-        "links": [
-            {"name": "Source Code", "url": "https://github.com/MrLepoischiche/WebCards", "icon": "github"}
+            {"label": "Source Code", "url": "https://github.com/MrLepoischiche/MyGraphQL", "icon": "github"},
+            {"label": "Visit Website", "url": "https://subtle-nougat-143c59.netlify.app/", "icon": "external"}
         ]
     },
     {
@@ -54,7 +43,7 @@
         "techs": ["html", "css", "typescript", "react", "vite"],
         "description": "Right here!",
         "links": [
-            {"name": "Source Code", "url": "https://github.com/MrLepoischiche/ejean.github.io", "icon": "github"}
+            {"label": "Source Code", "url": "https://github.com/MrLepoischiche/ejean.github.io", "icon": "github"}
         ]
     }
 ]

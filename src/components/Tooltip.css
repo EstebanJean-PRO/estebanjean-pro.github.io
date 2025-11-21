@@ -1,0 +1,52 @@
+.tooltip-container {
+    z-index: 1000;
+    padding: 12px 16px;
+    background-color: var(--element-background);
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    max-width: 300px;
+    pointer-events: none;
+}
+
+.tooltip-content {
+    color: var(--main-text);
+}
+
+.tooltip-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tooltip-description {
+    margin: 0;
+    font-size: 14pt;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.tooltip-tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+    border-top: 1px solid var(--primary-blue);
+}
+
+@media (max-width: 768px) {
+    .tooltip-container {
+        max-width: 250px;
+    }
+
+    .tooltip-description {
+        font-size: 12pt;
+    }
+
+    .tooltip-tech-icons img {
+        width: 24px;
+        height: 24px;
+    }
+}

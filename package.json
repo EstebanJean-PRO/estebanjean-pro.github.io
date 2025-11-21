@@ -1,7 +1,7 @@
 {
   "name": "myportfolio",
   "private": true,
-  "version": "0.5.0",
+  "version": "1.0.0",
   "homepage": "https://mrlepoischiche.github.io",
   "type": "module",
   "scripts": {

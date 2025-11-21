@@ -1,0 +1,305 @@
+{
+  "problem-solving": {
+    "name": "Problem Solving",
+    "type": "soft",
+    "icon": "🧩"
+  },
+  "collaboration": {
+    "name": "Collaboration",
+    "type": "soft",
+    "icon": "🤝"
+  },
+  "adaptability": {
+    "name": "Adaptability",
+    "type": "soft",
+    "icon": "🔄"
+  },
+  "critical-thinking": {
+    "name": "Critical Thinking",
+    "type": "soft",
+    "icon": "💭"
+  },
+  "continuous-learning": {
+    "name": "Continuous Learning",
+    "type": "soft",
+    "icon": "📚"
+  },
+
+  "html": {
+    "name": "HTML",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+    "category": "frontend",
+    "proficiency": "advanced"
+  },
+  "css": {
+    "name": "CSS",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+    "category": "frontend",
+    "proficiency": "advanced"
+  },
+  "javascript": {
+    "name": "JavaScript",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    "category": "frontend",
+    "proficiency": "advanced"
+  },
+  "typescript": {
+    "name": "TypeScript",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    "category": "frontend",
+    "proficiency": "advanced"
+  },
+  "react": {
+    "name": "React",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    "category": "frontend",
+    "proficiency": "advanced"
+  },
+  "vue": {
+    "name": "Vue.JS",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
+    "category": "frontend",
+    "proficiency": "intermediate"
+  },
+  "next": {
+    "name": "Next.JS",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+    "category": "frontend",
+    "proficiency": "intermediate"
+  },
+  "nuxt": {
+    "name": "Nuxt.JS",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nuxtjs/nuxtjs-original.svg",
+    "category": "frontend",
+    "proficiency": "intermediate"
+  },
+  "tailwind": {
+    "name": "Tailwind CSS",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    "category": "frontend",
+    "proficiency": "advanced"
+  },
+  "jquery": {
+    "name": "jQuery",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jquery/jquery-original.svg",
+    "category": "frontend",
+    "proficiency": "intermediate"
+  },
+  "vite": {
+    "name": "Vite",
+    "type": "hard",
+    "link": "https://devicons.railway.com/i/vitejs.svg",
+    "category": "frontend",
+    "proficiency": "intermediate"
+  },
+
+  "c": {
+    "name": "C",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
+    "category": "backend",
+    "proficiency": "intermediate"
+  },
+  "c++": {
+    "name": "C++",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
+    "category": "backend",
+    "proficiency": "intermediate"
+  },
+  "c#": {
+    "name": "C#",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+    "category": "backend",
+    "proficiency": "intermediate"
+  },
+  "go": {
+    "name": "GoLang",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg",
+    "category": "backend",
+    "proficiency": "intermediate"
+  },
+  "java": {
+    "name": "Java",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    "category": "backend",
+    "proficiency": "advanced"
+  },
+  "nodejs": {
+    "name": "Node.JS",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    "category": "backend",
+    "proficiency": "advanced"
+  },
+  "php": {
+    "name": "PHP",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
+    "category": "backend",
+    "proficiency": "advanced"
+  },
+  "python": {
+    "name": "Python",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+    "category": "backend",
+    "proficiency": "advanced"
+  },
+  "lua": {
+    "name": "Lua",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/lua/lua-original.svg",
+    "category": "backend",
+    "proficiency": "beginner"
+  },
+  "rust": {
+    "name": "Rust",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
+    "category": "backend",
+    "proficiency": "beginner"
+  },
+
+  "json": {
+    "name": "JSON",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-original.svg",
+    "category": "data",
+    "proficiency": "advanced"
+  },
+  "xml": {
+    "name": "XML",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/xml/xml-original.svg",
+    "category": "data",
+    "proficiency": "intermediate"
+  },
+  "mysql": {
+    "name": "MySQL",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    "category": "data",
+    "proficiency": "advanced"
+  },
+  "postgresql": {
+    "name": "PostgreSQL",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+    "category": "data",
+    "proficiency": "advanced"
+  },
+  "mariadb": {
+    "name": "MariaDB",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg",
+    "category": "data",
+    "proficiency": "advanced"
+  },
+  "mongodb": {
+    "name": "MongoDB",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    "category": "data",
+    "proficiency": "intermediate"
+  },
+  "sqlite": {
+    "name": "SQLite",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg",
+    "category": "data",
+    "proficiency": "intermediate"
+  },
+  "oracle": {
+    "name": "Oracle DBMS | PL/SQL",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg",
+    "category": "data",
+    "proficiency": "intermediate"
+  },
+
+  "docker": {
+    "name": "Docker",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    "category": "devops",
+    "proficiency": "intermediate"
+  },
+  "git": {
+    "name": "Git",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    "category": "devops",
+    "proficiency": "advanced"
+  },
+  "github": {
+    "name": "GitHub",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+    "category": "devops",
+    "proficiency": "advanced"
+  },
+  "gradle": {
+    "name": "Gradle",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original.svg",
+    "category": "devops",
+    "proficiency": "beginner"
+  },
+  "maven": {
+    "name": "Maven",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg",
+    "category": "devops",
+    "proficiency": "beginner"
+  },
+
+  "figma": {
+    "name": "Figma",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+    "category": "devtools",
+    "proficiency": "beginner"
+  },
+  "penpot": {
+    "name": "Penpot",
+    "type": "hard",
+    "link": "https://design.penpot.app/images/favicon.png",
+    "category": "devtools",
+    "proficiency": "intermediate"
+  },
+  "uml": {
+    "name": "UML / MERISE",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unifiedmodelinglanguage/unifiedmodelinglanguage-original.svg",
+    "category": "devtools",
+    "proficiency": "intermediate"
+  },
+  "markdown": {
+    "name": "Markdown",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/markdown/markdown-original.svg",
+    "category": "devtools",
+    "proficiency": "advanced"
+  },
+  "postman": {
+    "name": "Postman",
+    "type": "hard",
+    "link": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+    "category": "devtools",
+    "proficiency": "intermediate"
+  }
+}
