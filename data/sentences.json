@@ -1,0 +1,19 @@
+{
+    "beginner": [
+        "So much to learn... It's exciting!"
+    ],
+
+    "intermediate": [
+        "Getting the hang of this!",
+        "Making steady progress!"
+    ],
+
+    "advanced": [
+        "Feeling confident and capable!",
+        "Ready to take on new challenges!"
+    ],
+
+    "expert": [
+        "Master of the craft!"
+    ]
+}

@@ -1,0 +1,24 @@
+[
+    {
+        "screenshots": [
+            ""
+        ],
+        "name": "",
+        "techs": [],
+        "description": "",
+        "links": [
+            {"label": "Source Code", "url": "https://github.com/MrLepoischiche/", "icon": "github"}
+        ]
+    },
+    {
+        "screenshots": [
+            ""
+        ],
+        "name": "Cardia",
+        "techs": ["html", "css", "javascript", "go"],
+        "description": "100% online card games website to play all kinds of card games on, completely free of any gambling mechanic.",
+        "links": [
+            {"label": "Source Code", "url": "https://github.com/MrLepoischiche/WebCards", "icon": "github"}
+        ]
+    }
+]
